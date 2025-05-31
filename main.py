@@ -20,6 +20,7 @@ def look_for_balatro_windows() -> str:
         does_balatro_exist = os.path.isfile(path)
         if does_balatro_exist:
             print("Balatro found! " + path)
+            # TODO: save the Balatro directory somewhere so you can load it again later
         else:
             print("Balatro not found in the path you entered!")
 
@@ -122,22 +123,43 @@ def main():
         input()
         return
 
+    # find all the installed music packs in resources and store their names
+    packs = [name for name in os.listdir('./packs') if os.path.isdir(name)]
+
+    # print all the options and let the user choose
+    print("Available Music Packs:")
+    print("----------------------")
+
+    for i, pack in enumerate (packs, start=1):
+        print(f"[{i}] {pack}")
+
+    # checking for option validity
+    while True:
+        try:
+            selection = int(input(f"Select a music pack to patch: (1-{len(packs)})"))
+            if 0 < selection <= len(packs):
+                break
+            else:
+                print("Invalid selection, pack index does not exist. Please try again.")
+        except ValueError:
+            print("That's not a valid number. Try again.")
+
     # open music folder read files
-    music_folder = os.path.join(os.getcwd(), "resources", "sounds")
+    music_folder = os.path.join(os.getcwd(), 'packs', packs[selection])
     music_files = os.listdir(music_folder)
     sevenzip_path = "C:/Program Files/7-Zip/7z.exe"
 
-    if os.path.exists("./original/"):
-        print("Original music already extracted! Reversing patch...")
-        # change working directory to original
-        os.chdir("original")
-        # add files to balatro.exe
+    # apparently this works on extracting select music files too, great implementation!
+    # extract the original music if not done so already
+    if os.path.exists("./packs/Original OST/") is False:
+        print("Extracting Balatro.exe's original music...")
+        os.makedirs("packs/Original OST", exist_ok=True)
         for file in music_files:
-            print("Replacing " + file + "...")
+            print("Extracting " + file + "...")
             if os_platform == "Windows":
-                process = subprocess.Popen([sevenzip_path, "a", path, f"resources/sounds/{file}"])
+                process = subprocess.Popen([sevenzip_path, "e", path, f"resources/sounds/{file}", "-o" + "./packs/Original OST"])
             elif os_platform == "Darwin":
-                process = subprocess.Popen(["zip", path, f"resources/sounds/{file}"])
+                process = subprocess.Popen(["unzip", path, f"resources/sounds/{file}", "-d" + "original/"])
             else:
                 print("Unsupported OS")
                 print("Press any key to exit...")
@@ -146,40 +168,11 @@ def main():
 
             process.wait()
 
-        # delete original folder
-        os.chdir("..")
-        shutil.rmtree("original")
-
-        print(chr(27) + "[2J")
-        print("Patch reversed! Enjoy the original music!")
-        print("Press any key to exit...")
-        input()
-        return
-
-
-    # extract balatro in specific path
-    print("Extracting Balatro.exe's original music...")
-
-    # create folder for original music
-    os.makedirs("original/resources/sounds", exist_ok=True)
-    for file in music_files:
-        print("Extracting " + file + "...")
-        if os_platform == "Windows":
-            process = subprocess.Popen([sevenzip_path, "e", path, f"resources/sounds/{file}", "-o" + "original/resources/sounds/"])
-        elif os_platform == "Darwin":
-            process = subprocess.Popen(["unzip", path, f"resources/sounds/{file}", "-d" + "original/"])
-        else:
-            print("Unsupported OS")
-            print("Press any key to exit...")
-            input()
-            exit(1)
-
-        process.wait()
-    # replace files in balatro.exe's resources/sounds/ with 7zip
+    # after the extraction is complete, begin replacement
     for file in music_files:
         print("Replacing " + file + "...")
         if os_platform == "Windows":
-            process = subprocess.Popen([sevenzip_path, "a", path, f"resources/sounds/{file}"])
+            process = subprocess.Popen([sevenzip_path, "u", path, f"resources/sounds/{file}"])
         elif os_platform == "Darwin":
             process = subprocess.Popen(["zip", path, f"resources/sounds/{file}"])
         else:

@@ -2,3 +2,4 @@
 /build/
 *.spec
 .DS_Store
+./todo.md

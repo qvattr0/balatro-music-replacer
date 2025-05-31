@@ -123,6 +123,7 @@ def main():
         input()
         return
 
+
     # find all the installed music packs in resources and store their names
     packs = [name for name in os.listdir('./packs') if os.path.isdir(name)]
 
@@ -148,6 +149,7 @@ def main():
     music_folder = os.path.join(os.getcwd(), 'packs', packs[selection])
     music_files = os.listdir(music_folder)
     sevenzip_path = "C:/Program Files/7-Zip/7z.exe"
+
 
     # apparently this works on extracting select music files too, great implementation!
     # extract the original music if not done so already

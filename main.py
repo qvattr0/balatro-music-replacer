@@ -71,7 +71,7 @@ def check_7zip():
                 [
 		    "powershell",
                     "-Command",
-                    f"Start-Process '{sevenzip_installer}' -ArgumentList '/S /D=\"{sevenzip_path.removesuffix("7z.exe")}\"'"
+                    f"Start-Process '{sevenzip_installer}' -ArgumentList '/S /D=\"{sevenzip_path.removesuffix('7z.exe')}\"'"
                 ],
                 check=True
             )

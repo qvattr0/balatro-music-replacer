@@ -1,3 +1,4 @@
+![Banner](assets/banner_balatro-music-replacer.jpg)
 # Balatro Music Replacer
 
 A simple program for patching custom music into Balatro. Supports storing
@@ -14,7 +15,8 @@ soundpack_name/
 You can also have a folder with *only specific* music files that you'd like to
 replace. Note that the application creates a temporary directory in the folder.
 
-🛑 This program has not been tested on macOS, so use with caution on that platform. I should get to testing the program on macOS eventually. If you'd like to help with testing, open a suggestion here.
+> [!IMPORTANT]
+> This program does not work properly on macOS. I will add macOS functionality sometime soon, so hold off on using it on macOS for now.
 
 On Windows, this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is

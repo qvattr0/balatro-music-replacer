@@ -128,6 +128,12 @@ def main():
     # find all the installed music packs in resources and store their names
     packs = [name for name in os.listdir('./packs') if os.path.isdir(name)]
 
+    # check if the packs folder is empty
+    # TODO: test this feature
+    if not packs:
+        print("No music packs detected! Please place your pack inside the `packs/` folder while following this folder structure: ")
+        print("soundpack_name/\n├── music1.ogg\n├── music2.ogg\n├── music3.ogg\n├── music4.ogg\n└── music5.ogg")
+
     # print all the options and let the user choose
     print("Available Music Packs:")
     print("----------------------")

@@ -2,6 +2,7 @@
 /build/
 /packs/*
 /.vscode/
+
 *.spec
 .DS_Store
-./todo.md
+todo.md

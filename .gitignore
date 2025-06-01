@@ -1,5 +1,6 @@
 /dist/
 /build/
+/packs/*
 *.spec
 .DS_Store
 ./todo.md

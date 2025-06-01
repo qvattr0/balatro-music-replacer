@@ -149,7 +149,10 @@ def main():
 
 
     # find all the installed music packs in resources and store their names
-    packs = [name for name in os.listdir('./packs') if os.path.isdir(name)]
+    script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
+    packs_path = os.path.join(script_dir, 'packs')
+    packs = [name for name in os.listdir(packs_path) if os.path.isdir(os.path.join(packs_path, name))]
+
 
     # check if the packs folder is empty
     # TODO: test this feature

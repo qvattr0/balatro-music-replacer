@@ -1,23 +1,13 @@
-# Balatro Music Multipatcher
+# Balatro Music Patcher
 
-A simple program for patching custom music into Balatro. Supports storing
-different soundpacks and switching between them on-demand. The soundpacks are stored in the `packs/` folder with the following structure:
-```
-soundpack_name/
-├── music1.ogg
-├── music2.ogg
-├── music3.ogg
-├── music4.ogg
-└── music5.ogg
-```
+A simple program for patching custom music into Balatro.
+(Specifically Dom Palombi's covers.)
 
-You can also have a folder with *only specific* music files that you'd like to replace.
-
-On Windows, this program uses 7zip to replace in-game files with the custom music.
+On Windows this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is
 recommended to install it yourself. [here](https://www.7-zip.org/)
 
-[Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
+[Latest Release](https://github.com/Nat3z/balatro-music-patch/releases/latest)
 
 ## Windows
 
@@ -31,27 +21,34 @@ recommended to install it yourself. [here](https://www.7-zip.org/)
 
 ### Manually Patching Music (Windows)
 
+### Usage
+
 1. Download 7zip from [here](https://www.7-zip.org/download.html).
 2. Open the repository and navigate to the `resources/sounds/` folder.
 3. Download the music from this folder.
 4. Open where Balatro is located on your computer and right click
-   on the Balatro executable (Balatro.exe).
+4. Import music replacement packs to the `packs/` folder
+5. Make sure the music is directly within the folder of the replacement pack
+   - An example pack with dummy files has been placed in the `packs/` folder.
+     Internal structure of your replacement files should be similar to that of
+     the example pack
+6. Run `balatro-music-patch.exe` (Windows might give you a warning from SmartScreen,
 5. Go to `7-Zip -> Open Archive`.
-6. Navigate to the `resources/sounds/` folder in the archive.
+7. Follow the instructions in the program.
 7. Drag and drop the music files into the archive.
 8. Close the archive and run Balatro.
 
 ## MacOS
-
-### Usage
-
+2. Get the music files from the music replacement source 
+   - The music files should be named `music1.ogg`, `music2.ogg`,..., `music5.ogg`
+3. Open the location of Balatro on your computer and right-click
 1. Download the latest release from the link above.
-2. Extract the zip file.
-3. Open terminal
-4. Navigate to the release directory
-5. Run `./balatro-music-patch`
+4. Go to `7-Zip -> Open Archive`.
+5. Navigate to the `resources/sounds/` folder in the archive.
+6. Drag and drop the music files into the archive.
+7. Close the archive and run Balatro.
 6. Follow the instructions in the program.
-
+## macOS
 ### Manually Patching Music (MacOS)
 
 1. Open the repository and navigate to the `resources/sounds/` folder.
@@ -62,28 +59,28 @@ recommended to install it yourself. [here](https://www.7-zip.org/)
 5. Navigate to 'Contents/Resources/'
 6. Rename 'Balatro.love' to 'Balatro.zip'
 7. Double click 'Balatro.zip' to extract and navigate into the Balatro folder
-8. Navigate to the `resources/sounds/` folder.
+### Manually Patching Music (macOS)
 9. Drag and drop the music files into the folder.
-10. Return to the Balatro folder from step 7
-11. Press shift-A to select all, right click, and press 'Compress'
-12. Rename 'Archive.zip' to 'Balatro.love' and copy it to the
+1. Get the music files from the music replacement source 
+   - The music files should be named `music1.ogg`, `music2.ogg`,..., `music5.ogg`
+2. Navigate to '~/Library/Application Support/Steam/steamapps/common/Balatro'
     'Contents/Resources/' folder from step 5
-13. Delete the Balatro folder and 'Balatro.zip' from 'Contents/Resources/'
-14. Run Balatro.
-
-## Building from Source
-
-1. Clone the repository.
-2. Install pyinstaller with `pip install pyinstaller`.
-3. Run `pyinstaller --onefile main.py`.
-4. The executable will be in the `dist/` folder.
+3. Right click on Balatro.app and click 'Show Package Contents'.
+4. Navigate to 'Contents/Resources/'
+5. Rename 'Balatro.love' to 'Balatro.zip'
+6. Double click 'Balatro.zip' to extract and navigate into the Balatro folder
+7. Navigate to the `resources/sounds/` folder.
+8. Drag and drop the music files into the folder.
+9.  Return to the Balatro folder from step 7
+10. Press shift-A to select all, right click, and press 'Compress'
+11. Rename 'Archive.zip' to 'Balatro.love' and copy it to the
 5. Run the executable in a directory with the resources folder
-
-## Credit
+12. Delete the Balatro folder and 'Balatro.zip' from 'Contents/Resources/'
+13. Run Balatro.
 
 - Dom Palombi for the music covers.
   - [Balatro Boss Blind Cover](https://www.youtube.com/watch?v=Uxc0m4GRiuc)
   - [Balatro Main Theme Cover](https://www.youtube.com/watch?v=WJi6m7R8ADY)
-- 7zip for opening archives.
+2. Install `pyinstaller` with `pip install pyinstaller`.
 - PyInstaller for .exe creation.
 - The Balatro team for the game.

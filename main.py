@@ -127,7 +127,7 @@ def main():
     print(chr(27) + "[2J")
 
     print("Balatro Music Multipatcher")
-    print("**************************")
+    print("**************************\n")
     if platform.system() == "Darwin":
         # make this fix for macos as there are weird issues with the working directory
         path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
@@ -159,6 +159,9 @@ def main():
     if not packs:
         print("No music packs detected! Please place your pack inside the `packs/` folder while following this folder structure: ")
         print("soundpack_name/\n├── music1.ogg\n├── music2.ogg\n├── music3.ogg\n├── music4.ogg\n└── music5.ogg")
+        print("Press any key to exit...")
+        input()
+        exit(1)
 
     # print all the options and let the user choose
     print("Available Music Packs:")
@@ -179,7 +182,7 @@ def main():
             print("That's not a valid number. Try again.")
 
     # open music folder read files
-    music_folder = os.path.join(os.getcwd(), 'packs', packs[selection])
+    music_folder = os.path.join(os.getcwd(), 'packs', packs[selection - 1])
     music_files = os.listdir(music_folder)
     sevenzip_path = "C:/Program Files/7-Zip/7z.exe"
 

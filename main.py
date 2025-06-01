@@ -149,7 +149,10 @@ def main():
 
 
     # find all the installed music packs in resources and store their names
-    packs = [name for name in os.listdir('./packs') if os.path.isdir(name)]
+    script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
+    packs_path = os.path.join(script_dir, 'packs')
+    packs = [name for name in os.listdir(packs_path) if os.path.isdir(os.path.join(packs_path, name))]
+
 
     # check if the packs folder is empty
     # TODO: test this feature
@@ -159,9 +162,6 @@ def main():
 
     # print all the options and let the user choose
     print("Available Music Packs:")
-        print("Press any key to exit...")
-        input()
-        exit(1)
     print("----------------------")
 
     for i, pack in enumerate (packs, start=1):
@@ -170,7 +170,7 @@ def main():
     # checking for option validity
     while True:
         try:
-            selection = int(input(f"Select a music pack to patch: (1-{len(packs)})"))
+            selection = int(input(f"Select a music pack to patch: (1-{len(packs)})\n"))
             if 0 < selection <= len(packs):
                 break
             else:

@@ -1,13 +1,23 @@
-# Balatro Music Patcher
+# Balatro Music Multipatcher
 
-A simple program for patching custom music into Balatro.
-(Specifically Dom Palombi's covers.)
+A simple program for patching custom music into Balatro. Supports storing
+different soundpacks and switching between them on-demand. The soundpacks are stored in the `packs/` folder with the following structure:
+```
+soundpack_name/
+├── music1.ogg
+├── music2.ogg
+├── music3.ogg
+├── music4.ogg
+└── music5.ogg
+```
 
-On Windows this program uses 7zip to replace in-game files with the custom music.
+You can also have a folder with *only specific* music files that you'd like to replace.
+
+On Windows, this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is
 recommended to install it yourself. [here](https://www.7-zip.org/)
 
-[Latest Release](https://github.com/Nat3z/balatro-music-patch/releases/latest)
+[Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
 
 ## Windows
 

@@ -7,7 +7,25 @@ On Windows this program uses 7zip to replace in-game files with the custom music
 If 7zip is not installed, the program will download it for you, but it is
 recommended to install it yourself. [here](https://www.7-zip.org/)
 
-[Latest Release](https://github.com/Nat3z/balatro-music-patch/releases/latest)
+[Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
+
+## Music Packs
+For your convenience, I've compiled a list of all the music replacement packs I've come across. If you know of more, please let me know!
+
+1. [Bonne Soirée](https://youtu.be/KiIXRr_GGCw) by Vongola
+2. [Monkey Business](https://youtu.be/V3ps8wvrmxw) by Bombaflex
+3. [Balatro: B-side](https://youtu.be/_u8tHrRMNG8) by Afterlight
+4. [Raise The Stakes](https://youtu.be/p6TGmmQ_Fj4) by JohnathanSucks
+5. [Cardsauce](https://youtu.be/Swe_WOWdaqQ) by Bassclefff
+6. [Going in Blind](https://youtu.be/oRoLuU3vA8E) by Recycled Scraps
+
+### Partial Music Packs
+The program also allows you to replace parts of the soundtrack instead of all
+the files. Just put in the specific music files you'd like to have replaced in
+the dedicated music pack folder, and you're good to go!
+1. [Main Theme Lo-Fi Mix](https://youtu.be/lGqeOnB0Vjg?list=PLuijNdiAVrbY19dl9MrjWfR12EJ6UgVUh) by VRIME
+2. [FFVII Soundfont](https://youtu.be/p8YDa_khyKg?list=PLuijNdiAVrbY19dl9MrjWfR12EJ6UgVUh) by rocketbirdie
+3. [Dom Palombi's](https://www.youtube.com/@DomPalombiMusic) works
 
 ## Windows
 

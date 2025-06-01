@@ -11,7 +11,8 @@ soundpack_name/
 └── music5.ogg
 ```
 
-You can also have a folder with *only specific* music files that you'd like to replace.
+You can also have a folder with *only specific* music files that you'd like to
+replace. Note that the application creates a temporary directory in the folder.
 
 On Windows, this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is

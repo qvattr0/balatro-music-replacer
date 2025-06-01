@@ -216,7 +216,7 @@ def main():
         process.wait()
 
     print(chr(27) + "[2J")
-    print("Patch applied! Enjoy your new music!")
+    print("Music files replaced! Enjoy your new music!")
     print("Press any key to exit...")
     input()
     exit(0)

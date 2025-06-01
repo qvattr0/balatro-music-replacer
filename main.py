@@ -7,6 +7,12 @@ import platform
 from sys import exit
 
 def look_for_balatro_windows() -> str:
+    # check if a path file exists
+    if os.path.isfile("gamepath.txt"):
+        with open("gamepath.txt", "r") as file:
+            path = file.read()
+            return os.path.realpath(path)
+
     path = "C:/Program Files (x86)/Steam/steamapps/common/Balatro/Balatro.exe"
     does_balatro_exist = os.path.isfile(path)
     if does_balatro_exist:
@@ -20,13 +26,24 @@ def look_for_balatro_windows() -> str:
         does_balatro_exist = os.path.isfile(path)
         if does_balatro_exist:
             print("Balatro found! " + path)
-            # TODO: save the Balatro directory somewhere so you can load it again later
+            print("> Saving the path to gamepath.txt for future use...")
+
+            with open("gamepath.txt", "w", encoding="utf-8") as f:
+                f.write(path)
+            
+            print("Done!")
         else:
             print("Balatro not found in the path you entered!")
 
     return os.path.realpath(path)
 
 def look_for_balatro_macos() -> str:
+        # check if a path file exists
+    if os.path.isfile("gamepath.txt"):
+        with open("gamepath.txt", "r") as file:
+            path = file.read()
+            return os.path.realpath(path)
+        
     home_dir = os.path.expanduser("~")
     relative_path = "Library/Application Support/Steam/steamapps/common/Balatro/Balatro.app"
     path = os.path.join(home_dir, relative_path)
@@ -42,6 +59,12 @@ def look_for_balatro_macos() -> str:
         does_balatro_exist = os.path.exists(path) and os.path.isdir(path)
         if does_balatro_exist:
             print("Balatro found! " + path)
+            print("> Saving the path to gamepath.txt for future use...")
+
+            with open("gamepath.txt", "w", encoding="utf-8") as f:
+                f.write(path)
+            
+            print("Done!")
         else:
             print("Balatro not found in the path you entered!")
 

@@ -103,7 +103,8 @@ def main():
     path = ""
     print(chr(27) + "[2J")
 
-    print("Balatro Music Patcher")
+    print("Balatro Music Multipatcher")
+    print("**************************")
     if platform.system() == "Darwin":
         # make this fix for macos as there are weird issues with the working directory
         path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])

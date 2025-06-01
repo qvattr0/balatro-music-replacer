@@ -153,9 +153,7 @@ def main():
     packs_path = os.path.join(script_dir, 'packs')
     packs = [name for name in os.listdir(packs_path) if os.path.isdir(os.path.join(packs_path, name))]
 
-
     # check if the packs folder is empty
-    # TODO: test this feature
     if not packs:
         print("No music packs detected! Please place your pack inside the `packs/` folder while following this folder structure: ")
         print("soundpack_name/\n├── music1.ogg\n├── music2.ogg\n├── music3.ogg\n├── music4.ogg\n└── music5.ogg")
@@ -210,6 +208,15 @@ def main():
     for file in music_files:
         print("Replacing " + file + "...")
         if os_platform == "Windows":
+            # prepare a temporary directory for transferral
+            temp_dir = os.path.join("resources", "sounds")
+            os.makedirs(temp_dir, exist_ok=True)
+
+            # copying the selected files to the temporary directory
+            source_path = os.path.join("packs", packs[selection - 1], file)
+            dest_path   = os.path.join("resources", "sounds", file)
+            shutil.copy(source_path, dest_path)
+
             process = subprocess.Popen([sevenzip_path, "u", path, f"resources/sounds/{file}"])
         elif os_platform == "Darwin":
             process = subprocess.Popen(["zip", path, f"resources/sounds/{file}"])
@@ -220,6 +227,9 @@ def main():
             exit(1)
 
         process.wait()
+
+    # remove the temporary resources location once done with the operations
+    shutil.rmtree("resources")
 
     print(chr(27) + "[2J")
     print("Music files replaced! Enjoy your new music!")

@@ -1,4 +1,4 @@
-# Balatro Music Multipatcher
+# Balatro Music Replacer
 
 A simple program for patching custom music into Balatro. Supports storing
 different soundpacks and switching between them on-demand. The soundpacks are stored in the `packs/` folder with the following structure:

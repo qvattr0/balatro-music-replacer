@@ -20,7 +20,7 @@ replace. Note that the application creates a temporary directory in the folder.
 
 On Windows, this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is
-recommended to install it yourself. [here](https://www.7-zip.org/)
+recommended to install it yourself [here](https://www.7-zip.org/).
 
 [Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
 

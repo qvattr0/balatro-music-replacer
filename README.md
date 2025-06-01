@@ -15,7 +15,7 @@ soundpack_name/
 You can also have a folder with *only specific* music files that you'd like to
 replace. Note that the application creates a temporary directory in the folder.
 
-> [!IMPORTANT]
+> [!WARNING]
 > This program does not work properly on macOS. I will add macOS functionality sometime soon, so hold off on using it on macOS for now.
 
 On Windows, this program uses 7zip to replace in-game files with the custom music.

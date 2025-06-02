@@ -18,14 +18,14 @@ replace.
 > [!NOTE]
 >  The application creates a temporary directory in the folder, so make sure it's granted writing permissions or is not placed in a protected location like `/Program Files/`. If that raises concerns for you, feel free to audit the code.
 
-> [!WARNING]
-> This program does not work properly on macOS. I will add macOS functionality sometime soon, so hold off on using it on macOS for now.
-
 On Windows, this program uses 7zip to replace in-game files with the custom music.
 If 7zip is not installed, the program will download it for you, but it is
 recommended to install it yourself [here](https://www.7-zip.org/).
 
 [Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
+
+> [!WARNING]
+> This program does not work properly on macOS. I will add macOS functionality sometime soon, so hold off on using it on macOS for now.
 
 ## Music Packs
 For your convenience, I've compiled a list of all the music replacement packs I've come across. If you know of more, please let me know!

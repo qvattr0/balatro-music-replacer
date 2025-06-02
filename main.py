@@ -230,6 +230,14 @@ def main():
 
             process = subprocess.Popen([sevenzip_path, "u", path, f"resources/sounds/{file}"])
         elif os_platform == "Darwin":
+            temp_dir = os.path.join("resources", "sounds")
+            os.makedirs(temp_dir, exist_ok=True)
+
+            # copying the selected files to the temporary directory
+            source_path = os.path.join("packs", packs[selection - 1], file)
+            dest_path   = os.path.join("resources", "sounds", file)
+            shutil.copy(source_path, dest_path)
+
             process = subprocess.Popen(["zip", path, f"resources/sounds/{file}"])
         else:
             print("Unsupported OS")

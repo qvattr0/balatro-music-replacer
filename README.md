@@ -13,7 +13,10 @@ soundpack_name/
 ```
 
 You can also have a folder with *only specific* music files that you'd like to
-replace. Note that the application creates a temporary directory in the folder.
+replace.
+
+> [!NOTE]
+>  The application creates a temporary directory in the folder, so make sure it's granted writing permissions or is not placed in a protected location like `/Program Files/`. If that raises concerns for you, feel free to audit the code.
 
 > [!WARNING]
 > This program does not work properly on macOS. I will add macOS functionality sometime soon, so hold off on using it on macOS for now.

@@ -184,6 +184,8 @@ def main():
     music_files = os.listdir(music_folder)
     sevenzip_path = "C:/Program Files/7-Zip/7z.exe"
 
+    # clearing the file list from unnecessary files
+    music_files = [file for file in music_files if file.startswith("music")]
 
     # apparently this works on extracting select music files too, great implementation!
     # extract the original music if not done so already

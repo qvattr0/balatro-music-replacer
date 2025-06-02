@@ -54,10 +54,7 @@ the dedicated music pack folder, and you're good to go!
 3. (If necessary) Allow the app through Windows Security
    (Audit code through GitHub to verify.)
 4. Import music replacement packs to the `packs/` folder
-5. Make sure the music is directly within the folder of the replacement pack
-   - An example pack with dummy files has been placed in the `packs/` folder.
-     Internal structure of your replacement files should be similar to that of
-     the example pack
+5. Make sure the music is directly within the folder of the replacement pack and the folder structure follows the template mentioned above!
 6. Run `balatro-music-patch.exe` (Windows might give you a warning from SmartScreen,
    but press `More Info -> Run Anyway`.)
 7. Follow the instructions in the program.

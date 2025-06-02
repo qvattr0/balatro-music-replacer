@@ -195,7 +195,16 @@ def main():
             if os_platform == "Windows":
                 process = subprocess.Popen([sevenzip_path, "e", path, f"resources/sounds/{file}", "-o" + "./packs/Original OST"])
             elif os_platform == "Darwin":
-                process = subprocess.Popen(["unzip", path, f"resources/sounds/{file}", "-d" + "original/"])
+                process = subprocess.Popen(["unzip", path, f"resources/sounds/{file}", "-d" + "packs/Original OST/"])
+
+                # move the files from Original OST/resources/sounds/ to root
+                extracted_path = os.path.join("packs", "Original OST", "resources", "sounds", file)
+                final_path     = os.path.join("packs", "Original OST", file)
+                if os.path.exists(extracted_path):
+                    shutil.move(extracted_path, final_path)
+
+                shutil.rmtree("packs/Original OST/resources")
+
             else:
                 print("Unsupported OS")
                 print("Press any key to exit...")

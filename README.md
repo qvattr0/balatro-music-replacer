@@ -23,7 +23,7 @@ If 7zip is not installed, the program will download it for you, but it is
 recommended to install it yourself [here](https://www.7-zip.org/).
 
 > [!WARNING]
-> On initial launch, the program will attempt to backup the original OST of the game, which is the OST of the game at the point of using the program. This means that if you have already replaced the OST, the program will consider _that_ to be the original OST and back that up instead.
+> On initial launch, the program will attempt to backup the original OST of the game, which is the OST of the game at the point of using the program. This means that if you have already replaced the OST, the program will consider _that_ to be the original OST and back that up instead. If you would like to have the program be able to replace the OST with the official game OST, either reinstall your game (to return the OST to its' official state) or nanually create a folder named `Original OST` in `packs/` and place the official OST music files there.
 
 [Latest Release](https://github.com/qvattr0/balatro-music-multipatcher/releases/latest)
 
